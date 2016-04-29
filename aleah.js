@@ -41,6 +41,32 @@ $(document).ready(function() {
 	addRotateClass('stories');
 	addRotateClass('current');
 	addRotateClass('teaching');
+
+	$('.catHeader').mouseover(function(){
+		$(this).find('.headerTransform').addClass('flipped');
+	}).mouseout(function(){
+		$(this).find('.headerTransform').removeClass('flipped');
+	});
+
+	$('.navBottom').click(function() {
+		var transformID = $(this).attr('href')+'Transform'
+		setTimeout(function(){
+			$(transformID).addClass('flipped');
+		},1100);
+	});
+
+	$('.navTop').click(function() {
+		var transformID = $(this).attr('href')+'Transform'
+		setTimeout(function(){
+			$(transformID).removeClass('flipped');
+		},1100);
+	});
+
+	$('#contactForm').ajaxForm(function() {
+		$('#email, #message').val('');
+		$('#currentTransform').removeClass('flipped');
+	});
+
 });
 
 
@@ -60,10 +86,10 @@ $(document).ready(function() {
 	var bluePhong = new THREE.MeshPhongMaterial( { color: 0x0000ff } );
 	var redPhong = new THREE.MeshPhongMaterial({color: 0xff0000})
 	var iso = new THREE.Mesh( geomIcosahedron, bluePhong );
-	var edges = new THREE.EdgesHelper( iso, 0xFFF576 );
+	// var edges = new THREE.EdgesHelper( iso, 0xFFF576 );
 	iso.position.set(7,19,-30)
 	scene.add(iso);
-	scene.add(edges)
+	// scene.add(edges)
 
 	var geoOctahedron = new THREE.OctahedronGeometry(2,0);
 	var oct1 = new THREE.Mesh( geoOctahedron, bluePhong );
@@ -71,7 +97,7 @@ $(document).ready(function() {
 	scene.add(oct1);
 
 	var iso2 = new THREE.Mesh( geomIcosahedron, bluePhong );
-	iso2.position.set(6, 7,-30)
+	iso2.position.set(8, 7,-30)
 	scene.add(iso2);
 
 	//light
@@ -79,12 +105,27 @@ $(document).ready(function() {
 	directionalLight.position.set( 0, 0, 1 );
 	scene.add(directionalLight);
 
+	// var sphere = new THREE.SphereGeometry(5,30,30);
+	// var sphereMaterial = new THREE.MeshPhongMaterial();
+	// sphereMaterial.map = THREE.ImageUtils.loadTexture('assets/planetMaps/mars_1k_color.jpg');
+	// sphereMaterial.bumpMap = THREE.ImageUtils.loadTexture('assets/planetMaps/marsbump1k.jpg');
+	// sphereMaterial.bumpScale = .05;
+	// var mars = new THREE.Mesh(sphere, sphereMaterial);
+	// mars.position.set(7,7,-60);
+	// scene.add(mars);
+
 	function render() {
 		requestAnimationFrame( render );
 		iso.rotation.x += 0.01;
 		iso.rotation.y += 0.01;
 		oct1.rotation.x += 0.01;
 		oct1.rotation.y += 0.01;
+		// tet2.rotation.x += 0.01;
+		// tet2.rotation.y += 0.01;
+		// tet1.rotation.x += 0.01;
+		// tet1.rotation.y += 0.01;
+		// mars.rotation.y +=.05;
+		// mars.position.x -=.1;
 		iso2.rotation.x += 0.01;
 		iso2.rotation.y += 0.01;
 		renderer.render( scene, camera );

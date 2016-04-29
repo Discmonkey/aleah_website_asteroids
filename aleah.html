@@ -7,30 +7,94 @@
 	<link rel="stylesheet" type="text/css" href="aleah.css">
 	<script src="/Users/max/JS/node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="/Users/max/JS/node_modules/three/three.min.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
 </head>
 	<script src="aleah.js">
 	</script>
 <body>
 	<div id="wrapper">
 		<div class='container' id='foregroundContainer'>
-			<div class='row' id="topRow">
+			<div class='row text-center' id="topRow">
 				<div class='col-md-12'>
 					<div class="content1">
 
-						<div class="row"><div class="col-md-12 text-center"><h1> Aleah Sterman Goldin </h1></div></div>
+						<div class="row"><div class="col-md-12 text-center"><h1 id='mainTitle'> Aleah Sterman Goldin </h1></div></div>
 
 						<div class="row">
-							<div class="col-md-3 text-center"><a href='#about'> About </a> </div>
-							<div class="col-md-3 text-center"><a href='#stories'> New Works </a></div>
-							<div class="col-md-3 text-center"><a href="#current"> Workshop </a></div>
-							<div class="col-md-3 text-center"><a href='#teaching'> Teaching </a></div>
-						</div>
 
-						<div class='row'>
-							<div class="col-md-3 text-center secondRow"><a href='#about'> Theme </a> </div>
-							<div class="col-md-3 text-center secondRow"><a href='#stories'> Publications  </a></div>
-							<div class="col-md-3 text-center secondRow"><a href="#current"> Contact </a></div>
-							<div class="col-md-3 text-center secondRow"><a href='#teaching'> Philosophy </a></div>
+							<div class="col-md-3 text-center catHeader">
+
+								<div id='headerTop'>
+									<a class='navTop' href='#about'> About </a>
+								</div>
+
+								<div class='bottomRow'>
+									<div class='headerTransform'>
+
+										<div class="headerFront"></div>
+
+										<div class='headerBack'>
+											<a class='navBottom' href='#about'> Theme </a> 
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-md-3 text-center catHeader">
+
+								<div id='headerTop'>
+									<a class='navTop' href='#stories'> New Works </a>
+								</div>
+
+								<div class="bottomRow">
+									<div class='headerTransform'>
+										<div class="headerFront"></div>
+										<div class='headerBack'>
+											<a class='navBottom' href='#stories'> Publications  </a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-md-3 text-center catHeader">
+
+								<div id='headerTop'>
+									<a class='navTop' href="#current"> Workshop </a>
+								</div>
+
+								<div class="bottomRow">
+									<div class="headerTransform">
+										<div class="headerFront"></div>
+										<div class="headerBack">
+											<a class='navBottom' href="#current"> Contact </a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="col-md-3 text-center catHeader">
+
+								<div id='headerTop'>
+									<a class='navTop' href='#teaching'> Teaching </a>
+								</div>
+
+								<div class="bottomRow">
+									<div class="headerTransform">
+										<div class="headerFront">
+										</div>
+
+										<div class='headerBack'>
+											<a class='navBottom' href='#teaching'> Philosophy </a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -123,18 +187,50 @@
 					<div class="content4" id='current'>
 						<div id="currentTransform">
 							<div class="currentFaceFront">	
-								<img src='assets/images/Picture2.png' class='inlineImageLeft'>
+								
 								<h3> WorkShop & Readings </h3>
-								<p> Aleah Sterman Goldin conducts staged readings, writing workshops, and creative juicing sessions. She teaches sessions for all ages on creativity, world-building, and folktales. When she was yay high, she was inducted into the National Storytelling Hall of Fame in Pigeon Forge, Tennessee. Since then, she has earned an MFA in Creative Writing at University of Alabama. 
+								<p> 
+								<img src='assets/images/Picture2.png' class='inlineImageLeft'>
+								Aleah Sterman Goldin conducts staged readings, writing workshops, and creative juicing sessions. She teaches sessions for all ages on creativity, world-building, and folktales. When she was yay high, she was inducted into the National Storytelling Hall of Fame in Pigeon Forge, Tennessee. Since then, she has earned an MFA in Creative Writing at University of Alabama. 
 								</p>
 
 								<p>These workshops have taken place all over Earth, including in the United States and Mongolia. If you would like to book her for a reading or workshop, contact her <a id="booking">here</a>. </p>
 							</div>
 							<div class="currentFaceBack">
-								<h3> Contact </h3>
-								<input type="text" placeholder="email"> 
-								<br>
-								<textarea></textarea>
+								<form class="form-horizontal" action='email.php' id='contactForm'>
+									<fieldset>
+
+									<!-- Form Name -->
+									<h3> Contact </h3>
+									
+									<!-- Text input-->
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="email">email</label>  
+										<div class="col-md-4">
+										<input id="email" name="email" type="text" placeholder="example@me.com" class="form-control input-md" required="">
+
+										</div>
+									</div>
+									
+									<!-- Textarea -->
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="message">message</label>
+										<div class="col-md-4">                     
+										<textarea class="form-control" id="message" name="message" required=""></textarea>
+										</div>
+									</div>
+									
+									<!-- Button -->
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="submit">submit</label>
+										<div class="col-md-4">
+										<button id="submit" type='button' name="submit" class="btn btn-default">Button</button>
+										</div>
+									</div>
+
+									</fieldset>
+								</form>
+
 							</div>
 						</div>
 					</div>
@@ -152,9 +248,11 @@
 						<div id="teachingTransform">
 							<div class="teachingFaceFront">
 								<h3> Teaching </h3>
-								<p> Aleah Sterman Goldin teaches university composition, creative writing, and research method courses. Most recently she has taught a class on “Illness Narratives,” which examines public health outbreaks and the narratives surrounding them. Read a snippet of her teaching philosophy <a id='philosophy'> here </a></p>
+								<p> 
 								<img src="assets/images/Picture4.png" alt="" class='inlineImageWide'>
-								<p>She teaches both native and non-native speakers of English. Her manifesto is to show students that they are already writers. Her courses are centered on critically engaging with rhetorical strategies and interrogating master narratives. </p>
+								Aleah Sterman Goldin teaches university composition, creative writing, and research method courses. Most recently she has taught a class on “Illness Narratives,” which examines public health outbreaks and the narratives surrounding them. Read a snippet of her teaching philosophy <a id='philosophy'> here </a></p>
+								<p>
+								She teaches both native and non-native speakers of English. Her manifesto is to show students that they are already writers. Her courses are centered on critically engaging with rhetorical strategies and interrogating master narratives. </p>
 									
 							</div>
 							<div class="teachingFaceBack">
