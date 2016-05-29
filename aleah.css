@@ -3,17 +3,24 @@ body {
 	background-color: #2808B9;
 }
 h1 {
-	color: #0000FF;
-	border-bottom: 2px solid blue;
+	color: #060F3C;
+	border-bottom: 2px solid #060F3C;
 	padding-bottom: 5px;
+	font-family: 'Oswald', sans-serif;
+	/*font-weight: bold; */
+	letter-spacing: .25em;
+
 }
 
 h3 {
-	color: #0000FF;
+	color: #060F3C;
 	margin: 0px;
 	margin-bottom: 1em;
-	border-bottom: 2px solid blue;
-
+	border-bottom: 2px solid #060F3C;
+	font-family: 'Oswald', sans-serif;
+	/*font-weight: bold; 
+*/
+	letter-spacing: .2em;
 }
 
 a {
@@ -33,7 +40,7 @@ td {
 .inlineImageWide {
 	float: right;
 	width: 250px;
-	margin: 3px;
+	margin: 5px;
 }
 
 .inlineImageTall {
@@ -52,8 +59,6 @@ td {
 .backImage {
 	height: 75%;
 }
-
-
 
 .content1 {
 	background-color: #fff;
@@ -88,6 +93,15 @@ td {
 	background-color: #fff;
 	width: 100%;
 	height: 420px;
+	border: 1px solid #0000ff;
+	margin-bottom: 150px;
+	padding: 40px;
+}
+
+.content5 {
+	background-color: #fff;
+	width: 100%;
+	height: 430px;
 	border: 1px solid #0000ff;
 	margin-bottom: 150px;
 	padding: 40px;
@@ -166,6 +180,10 @@ td {
 	transition: transform .5s;
 }
 
+.storyLink {
+	color: #87BFFF;
+}
+
 
 #aboutTransform div {
 	margin: 0;
@@ -173,6 +191,8 @@ td {
 	width: 100%;
 	height: 100%;
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: rotateX(0deg);
 }
 
 #storiesTransform div {
@@ -181,23 +201,30 @@ td {
 	width: 100%;
 	height: 100%;
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: rotateX(0deg);
 }
 
-#currentTransform div.currentFaceFront {
+#currentTransform .currentFaceFront {
 	margin: 0;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: rotateX(0deg);
 }
 
-#currentTransform div.currentFaceBack {
+#currentTransform .currentFaceBack {
 	margin: 0;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: rotateX(0deg);
 }
+
 
 #teachingTransform div {
 	margin: 0;
@@ -205,6 +232,8 @@ td {
 	width: 100%;
 	height: 100%;
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: rotateX(0deg);
 }
 
 .headerTransform div {
@@ -213,6 +242,8 @@ td {
 	width: 100%;
 	height: 100%;
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: rotateX(0deg);
 }
 
 #aboutTransform.flipped {
@@ -311,6 +342,18 @@ td {
 	height: 3000px;
 	background-image: url('assets/857-tileable-classic-nebula-space-patterns/5.jpg');
 	background-repeat: true;
+}
+
+@media(max-width:992px) {
+	.content1 {
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	#message {
+		width: 80%;
+		height: 30%;
+	}
 }
 
 

@@ -1,7 +1,7 @@
 <?php
 
-    $sendTo = $_POST['email'];
-    $body = "Message From: $sendTo".'<br><br>'.$_POST['message'];
-    $receive = 'frismo98@gmail.com'; 
+    $sendTo = $_REQUEST['email'];
+    $body = "Message From: $sendTo".' Message: '.$_REQUEST['message'];
+    $receive = 'aleah.goldin@gmail.com'; 
 
     mail($receive,'New Contact From Website',$body);

@@ -67,6 +67,9 @@ $(document).ready(function() {
 		$('#currentTransform').removeClass('flipped');
 	});
 
+	$('#message, #email, #submit, .storyLink').click(function(e) {
+		e.stopPropagation();
+	});
 });
 
 
