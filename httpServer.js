@@ -11,7 +11,6 @@ var getMIMType = function() {
 };
 
 var openFile = function(path,res) {
-   
     try {
         var file = fs.createReadStream(path);
     } catch(e) {
