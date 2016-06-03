@@ -42,7 +42,7 @@ var openFile = function(path,res) {
 
 http.createServer(function(req,res) {
 	console.log(req.url);
-	var homePath = 'aleah.html';
+	var homePath = 'index.html';
 	var url = req.url;
 	if (url == '/') {
 		openFile(homePath,res);
