@@ -266,19 +266,8 @@ td {
 	transform: rotateX(180deg);
 }
 
-#aboutTransform .aboutFaceFront {
-
-}
-#storiesTransform .storiesFaceFront {
-
-}
-
-#currentTransform .currentFaceFront {
-
-}
-
-#teachingTransform .teachingFaceFront {
-
+.flip-image {
+	transform: rotateZ(180deg);
 }
 
 #aboutTransform .aboutFaceBack {
